@@ -13,12 +13,18 @@ Vue.component('tasks', {
 
     methods: {
         fetchTaskList: function () {
-            $.getJSON('api/tasks', function (tasks) {
+            var resource = this.$resource('api/tasks/:id');
+
+            resource.get(function (tasks) {
                 this.list = tasks;
             }.bind(this));
+
+            /*$.getJSON('api/tasks', function (tasks) {
+                this.list = tasks;
+            }.bind(this));*/
         },
 
-        delete: function(task){
+        deleteTask: function(task){
             this.list.$remove(task);
         }
     }

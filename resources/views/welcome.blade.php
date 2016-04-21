@@ -16,13 +16,14 @@
                 <li class="list-group-item" v-for="task in list">
                     @{{ task.body }}
 
-                    <strong @click="delete(task)">X</strong>
+                    <strong @click="deleteTask(task)">X</strong>
                 </li>
             </ul>
         </template>
 
-        <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.7.0/vue-resource.js"></script>
+
         <script src="{{asset('js/main.js')}}"></script>
     </body>
 </html>
