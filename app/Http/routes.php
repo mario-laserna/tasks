@@ -7,3 +7,7 @@ Route::get('api/tasks', function(){
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('alerts', function () {
+    return view('alerts');
+});
